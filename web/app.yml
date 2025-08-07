@@ -1,21 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: nginx-deployment
-  labels:
-    app: nginx
+  name: hello-world-deployment
 spec:
   replicas: 3
   selector:
     matchLabels:
-      app: nginx
+      app: hello-world
   template:
     metadata:
       labels:
-        app: nginx
+        app: hello-world
     spec:
       containers:
-      - name: nginx
-        image: nginx
+      - name: hello-world
+        image: nginx:alpine
         ports:
         - containerPort: 80
